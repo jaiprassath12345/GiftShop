@@ -5,6 +5,8 @@ import { Link,useNavigate } from 'react-router-dom';
 import {toast} from  'react-hot-toast';
 
 const SignUp = () => {
+
+  const serverUrl=import.meta.env.REACT_APP_SERVER_DOMAIN;
     const navigate=useNavigate();
     const[showPassword,setShowPassword]=useState(false);
     const[showConfirmPassword,setShowConfirmPassword]=useState(false);
@@ -41,7 +43,7 @@ const SignUp = () => {
             {      
                 if(password===confirmpassword)
                 {
-                    const fetchData=await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/signup`,{
+                    const fetchData=await fetch(`${serverUrl}/signup`,{
                         method:"POST",
                         headers:{
                             "content-type":"application/json"

@@ -5,6 +5,7 @@ import {toast} from  'react-hot-toast';
 
 const NewProduct = () => {
 
+  const serverUrl=import.meta.env.REACT_APP_SERVER_DOMAIN;
   const [data,setData]=useState({
     name:"",
     category:"",
@@ -40,7 +41,7 @@ const NewProduct = () => {
     console.log(data)
     const {name,image,category,price}=data
     if(name && image && category && price){
-    const fetchData=await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/uploadProduct`,{
+    const fetchData=await fetch(`${serverUrl}/uploadProduct`,{
       method:"POST",
       headers:{
         "content-type":"application/json"
