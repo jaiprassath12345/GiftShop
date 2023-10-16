@@ -12,7 +12,8 @@ function App() {
 
 
   useEffect(()=>{
-   (async ()=>{
+   (async ()=>{ 
+    
     const res= await fetch(`${REACT_APP_SERVER_DOMAIN}/product`)
     const resData=await res.json();
 
