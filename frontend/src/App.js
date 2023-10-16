@@ -14,7 +14,7 @@ function App() {
   useEffect(()=>{
    (async ()=>{ 
 
-    const res= await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/product`,{mode:"no-cors"})
+    const res= await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/product`)
     const resData=await res.json();
 
     dispatch(setDataProduct(resData))
