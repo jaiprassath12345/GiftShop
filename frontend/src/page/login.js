@@ -17,7 +17,6 @@ const Login = () => {
     });
 
     const navigate=useNavigate();
-    const serverUrl=import.meta.env.REACT_APP_SERVER_DOMAIN;
   
     // const userData= useSelector(state=>state)
 
@@ -43,7 +42,7 @@ const Login = () => {
             const {email,password}=data
             if(email && password)
             {
-                const fetchData=await fetch(`${serverUrl}/login`,{
+                const fetchData=await fetch(`${import.meta.env.REACT_APP_SERVER_DOMAIN}/login`,{
                     method:"POST",
                     headers:{
                         "content-type":"application/json"

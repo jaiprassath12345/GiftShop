@@ -7,15 +7,13 @@ import {setDataProduct} from "./redux/productSlice";
 import {useDispatch, useSelector} from "react-redux";
 
 function App() {
-  const serverUrl=import.meta.env.REACT_APP_SERVER_DOMAIN;
-
   const dispatch=useDispatch()
   const productData=useSelector((state)=>state.product)
 
 
   useEffect(()=>{
    (async ()=>{
-    const res= await fetch(`${serverUrl}/product`)
+    const res= await fetch(`${import.meta.env.REACT_APP_SERVER_DOMAIN}/product`)
     const resData=await res.json();
 
     dispatch(setDataProduct(resData))
