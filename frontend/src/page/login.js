@@ -42,7 +42,7 @@ const Login = () => {
             const {email,password}=data
             if(email && password)
             {
-                const fetchData=await fetch(`${import.meta.env.REACT_APP_SERVER_DOMAIN}/login`,{
+                const fetchData=await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/login`,{
                     method:"POST",
                     headers:{
                         "content-type":"application/json"
