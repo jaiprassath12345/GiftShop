@@ -2,6 +2,7 @@ const express = require("express")
 const cors =require("cors")
 const mongoose=require("mongoose")
 const dotenv=require("dotenv").config()
+const app=express()
 
 // Set middleware of CORS 
 app.use((req, res, next) => {
@@ -25,7 +26,6 @@ app.use((req, res, next) => {
   next();
 });
 
-const app=express()
 app.use(cors({
     origin:["http://localhost:3000"]
 }))
